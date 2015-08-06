@@ -1,0 +1,19 @@
+<html>
+<head>
+    <title>Album List</title>
+</head>
+<body>
+
+    {% if albums is not empty %}
+    <h1>Album List</h1>
+    <ul>
+    {% for album in albums %}
+        <li>{{ album.getTitle }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+<p><a href='/new_cd'>Add Album</a></p>
+<hr>
+<p><a href='/searchbyartist'>Search Album by Artist</a></p>
+</body>
+</html>

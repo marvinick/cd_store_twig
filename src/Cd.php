@@ -58,5 +58,15 @@
             return $this->cover_art;
         }
 
+        function save()
+        {
+            array_push($_SESSION['all_albums'], $this);
+        }
+
+        static function getAll()
+        {
+            return $_SESSION['all_albums'];
+        }
+
     }
 ?>
