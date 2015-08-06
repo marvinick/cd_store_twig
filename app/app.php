@@ -25,7 +25,11 @@
         return $app['twig']->render('albums.html.twig', array('albums' => CD::getAll()));
     });
 
-    //$app->get("/")
+    $app->post("/new_cd", function() use ($app) {
+        $cd = new CD($_POST['title'], $_POST['artist'], $_POST['cover_art'],$_POST['price'] );
+        $cd->save();
+        return $app['twig']->render('new_cd.html.twig', array('newAlbum' => $cd));
+    });
 
     return $app;
 ?>
